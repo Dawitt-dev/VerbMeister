@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/quiz', [QuizController::class, 'getQuizData'])->name('quiz.show');
     Route::post('/quiz', [QuizController::class, 'storeQuizResult'])->name('quiz.store');
+    Route::get('/quiz/next', [QuizController::class, 'getNextQuiz'])->name('quiz.next');
 });
 
     
