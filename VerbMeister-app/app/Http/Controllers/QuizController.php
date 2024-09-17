@@ -31,4 +31,9 @@ class QuizController extends Controller
             'correct_preposition' => $verb->preposition
         ]);
     }
+    public function getNextQuiz()
+    {
+        $verb = DB::table('verbs')->inRandomOrder()->first();
+        return response()->json($verb);
+    }
 }
