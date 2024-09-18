@@ -20,9 +20,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/quiz', [QuizController::class, 'getQuizData'])->name('quiz.show');
-    Route::post('/quiz', [QuizController::class, 'storeQuizResult'])->name('quiz.store');
-    Route::get('/quiz/next', [QuizController::class, 'getNextQuiz'])->name('quiz.next');
+    Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz.show');
+    Route::post('/check-answer', [QuizController::class, 'checkAnswer'])->name('quiz.check');
+    //Route::get('/quiz/next', [QuizController::class, 'getNextQuiz'])->name('quiz.next');
 });
 
     

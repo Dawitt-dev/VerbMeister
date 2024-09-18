@@ -3,48 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\GermanVerb;
 
 class QuizController extends Controller
 {
-    // Fetch a random verb for the quiz
-    public function getQuizData()
+    public function showQuiz()
     {
-        $verb = DB::table('verbs')->inRandomOrder()->first();
-        return view('quiz', ['verb' => $verb]);
+        // Fetch a random verb from the database
+        $randomVerb = GermanVerb::inRandomOrder()->first();
+
+        // Pass the verb to the view
+        return view('quiz', ['verb' => $randomVerb->verb]);
     }
 
-    // Store the quiz result and return if the answer was correct or not
-    public function storeQuizResult(Request $request)
-{
-    $verbId = $request->input('verb_id');
-    $userAnswer = $request->input('preposition');
-    
-    // Fetch the verb by ID
-    $verb = DB::table('verbs')->where('id', $verbId)->first();
+    public function checkAnswer(Request $request)
+    {
+        // Fetch the corresponding verb from the database
+        $verb = GermanVerb::where('verb', $request->input('verb'))->first();
 
-    // Check if the verb and preposition exist
-    if (!$verb || !isset($verb->preposition)) {
-        return response()->json([
-            'correct' => false,
-            'message' => 'Verb not found or preposition missing',
+        // Check if the submitted preposition is correct
+        $submittedPreposition = $request->input('preposition');
+        $correctPreposition = $verb->preposition;
+
+        $score = session('score', 0); // Get the current score from session or default to 0
+
+        if ($submittedPreposition === $correctPreposition) {
+            $score++;
+            session(['score' => $score]); // Update the score in session
+            $message = "Correct!";
+            
+            // Fetch a new random verb
+            $verb = GermanVerb::inRandomOrder()->first();
+        } else {
+            $message = "Wrong! Please, Try again!";
+        }
+
+        return view('quiz', [
+            'verb' => $verb->verb,
+            'message' => $message,
+            'score' => $score,
         ]);
     }
-
-    // Check if the user's preposition is correct
-    $isCorrect = $verb->preposition === $userAnswer;
-
-    // Store score only if the answer is correct
-    if ($isCorrect) {
-        auth()->user()->userQuiz()->create([
-            'score' => 1
-        ]);
-    }
-
-    // Return the correct response with the preposition
-    return response()->json([
-        'correct' => $isCorrect,
-        'correct_preposition' => $verb->preposition
-    ]);
-}
 }
