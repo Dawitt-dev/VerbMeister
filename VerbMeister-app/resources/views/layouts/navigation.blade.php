@@ -3,7 +3,7 @@
         <div class="flex justify-between h-16">
             <div class="flex items-center">
                 <a href="{{ route('dashboard') }}">
-                    <img class="h-8" src="{{ asset('images/verbmeister.png') }}" alt="Verbmeister Logo">
+                    <img class="h-8" src="{{ asset('images/verbmeister_white.png') }}" alt="Verbmeister Logo" width="350" height="350">
                 </a>
             </div>
 
