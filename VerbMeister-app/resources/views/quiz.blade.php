@@ -9,7 +9,7 @@
 <body>
     <div>
         <a href="{{ route('dashboard')}}">
-            <img src="https://via.placeholder.com/150" alt="VerbMeister Logo">
+        <img src="{{ asset('images/verbmeister.png') }}" alt="VerbMeister Logo" width="150" height="150">
         </a>
     </div>
     <div>

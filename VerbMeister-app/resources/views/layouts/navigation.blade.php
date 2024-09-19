@@ -1,9 +1,9 @@
-<nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav class="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900"">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
                 <a href="{{ route('dashboard') }}">
-                    <img class="block h-8 w-auto" src="https://via.placeholder.com/150" alt="VerbMeister Logo">
+                    <img class="h-8" src="{{ asset('images/verbmeister.png') }}" alt="Verbmeister Logo">
                 </a>
             </div>
 
