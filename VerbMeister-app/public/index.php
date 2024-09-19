@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route\Web;
+
 
 define('LARAVEL_START', microtime(true));
 
