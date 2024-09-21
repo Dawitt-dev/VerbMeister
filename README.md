@@ -1,5 +1,5 @@
 
-[!VerbMeister Logo (public/images/verbmeister.png)]
+[!VerbMeister Logo] (public/images/verbmeister.png)
 
 Welcome to VerbMeister! This application helps users master German verbs with there prepostions interactive exercises and quizzes.
 
