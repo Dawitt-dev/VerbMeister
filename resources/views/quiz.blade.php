@@ -10,8 +10,6 @@
 	<div style="width: 100%; background-color: #e5e7eb; border-radius: 9999px; height: 16px; margin-bottom: 1.5rem; overflow: hidden;">
 		<div style="background-color: #013019; height: 16px; width: {{ $progress }}%;"></div>
 	</div>
-	<!-- Debugging Progress Value -->
-	<p class="text-center text-gray-500">Progress: {{ $progress }}%</p>
 
         <!-- Quiz Form -->
         <form method="POST" action="{{ route('quiz.check') }}">

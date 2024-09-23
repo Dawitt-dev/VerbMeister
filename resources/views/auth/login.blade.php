@@ -42,7 +42,7 @@
 
         <!-- Login Button -->
         <div>
-            <button type="submit" class="w-full bg-verbmeister text-black py-2 px-4 rounded hover:bg-verbmeister-dark transition duration-200">Log in</button>
+            <button type="submit"  class="w-full bg-[#013019] hover:bg-[#014f28] text-white font-bold py-2 px-4  hover:underline rounded">Log in</button>
         </div>
 
         <!-- Forgot Password and Register Links 
