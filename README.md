@@ -1,5 +1,5 @@
 
-[![VerbMeister Logo](public/images/verbmeister.png)]
+![VerbMeister Logo](public/images/verbmeister.png)
 
 Welcome to VerbMeister! This application helps users master German verbs with there prepostions interactive exercises and quizzes.
 
@@ -29,7 +29,8 @@ Welcome to VerbMeister! This application helps users master German verbs with th
 1. Start the application:
     ```sh
     npm start
-    ```
+    php artisan serve
+
 2. Open your browser and go to `http://localhost:3000`.
 
 
