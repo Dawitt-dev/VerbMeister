@@ -6,8 +6,12 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\QuizController;
 
 Route::get('/', function () {
+    return view('landing');
+})->name('landing');
+
+Route::get('/about', function () {
     return view('welcome');
-})->name('home') ;
+})->name('about') ;
 
 Route::get('/dashboard', function () {
     return view('dashboard');

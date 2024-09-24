@@ -8,6 +8,7 @@
             </div>
             <div class="flex items-center space-x-4">
 		@auth
+                    <!-- Authenticated User Links -->
                     <a href="{{ route('dashboard') }}" class="text-gray-600 hover:text-gray-800">Home</a>
                     <a href="{{ route('profile.edit') }}" class="text-gray-600 hover:text-gray-800">Profile</a>
                     <a href="{{ route('quiz.show') }}" class="text-gray-600 hover:text-gray-800">Quiz</a>
@@ -16,8 +17,13 @@
                         <button type="submit" class="text-gray-600 hover:text-gray-800">Logout</button>
                     </form>
 		@else
-                     <a href="{{ route('login') }}"  class="bg-[#013019] hover:bg-[#014f28] text-white font-bold py-2 px-4  hover:underline rounded">Login</a>
-                     <a href="{{ route('register') }}"  class="bg-[#013019] hover:bg-[#014f28] text-white font-bold py-2 px-4  hover:underline rounded"">Register</a>
+                      <!-- Guest Links 
+                      @if (Route::currentRouteName() !== 'landing')
+                          <a href="{{ route('landing') }}" class="text-gray-600 hover:text-gray-800">Home</a>
+                      @endif -->
+                     <a href="{{ route('login') }}"  class="text-gray-600 hover:text-gray-800">Login</a>
+                     <a href="{{ route('register') }}"  class="text-gray-600 hover:text-gray-800">Register</a>
+                     <a href="{{ route('about') }}" class="text-gray-600 hover:text-gray-800">About Us</a>
                  @endauth
             </div>
         </div>
