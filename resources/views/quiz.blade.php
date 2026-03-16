@@ -41,9 +41,9 @@
 
         {{-- Verb card --}}
         <div class="text-center mb-6">
+            <p class="text-sm text-gray-400 uppercase tracking-widest mb-2">Which preposition goes with</p>
             <p class="text-4xl font-bold" style="color:#013019;">{{ $verb }}</p>
             <p class="text-gray-500 mt-1">{{ $englishTranslation }}</p>
-            <p class="text-gray-400 text-sm italic mt-2">{{ $exampleSentence }}</p>
         </div>
 
         {{-- Multiple choice form --}}
@@ -51,8 +51,6 @@
             @csrf
             <input type="hidden" name="verb" value="{{ $verb }}">
             <input type="hidden" name="verb_id" value="{{ $verbId }}">
-
-            <p class="text-center text-sm text-gray-500 mb-3">___ is used with <strong>{{ $verb }}</strong></p>
 
             <div class="grid grid-cols-2 gap-3">
                 @foreach($options as $option)
