@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    container_name: verbmeister-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    env_file: .env
+    volumes:
+      - storage:/var/www/html/storage/app
+      - logs:/var/www/html/storage/logs
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    container_name: verbmeister-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  storage:
+  logs:
+  db-data:
