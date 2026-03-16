@@ -45,8 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    /**public function UserQuiz()
+    public function verbStats()
     {
-        return $this->hasMany(UserQuiz::class);
-    }**/
+        return $this->hasMany(UserVerbStat::class);
+    }
 }

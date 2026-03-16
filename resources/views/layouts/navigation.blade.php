@@ -16,15 +16,13 @@
                         @csrf
                         <button type="submit" class="text-gray-600 hover:text-gray-800">Logout</button>
                     </form>
-		@else
-                      <!-- Guest Links 
-                      @if (Route::currentRouteName() !== 'landing')
-                          <a href="{{ route('landing') }}" class="text-gray-600 hover:text-gray-800">Home</a>
-                      @endif -->
-                     <a href="{{ route('login') }}"  class="text-gray-600 hover:text-gray-800">Login</a>
-                     <a href="{{ route('register') }}"  class="text-gray-600 hover:text-gray-800">Register</a>
-                     <a href="{{ route('about') }}" class="text-gray-600 hover:text-gray-800">About Us</a>
-                 @endauth
+	        @else
+                    <!-- Guest Links -->
+                    <a href="{{ route('quiz.show') }}" class="text-gray-600 hover:text-gray-800">Quiz</a>
+                    <a href="{{ route('about') }}" class="text-gray-600 hover:text-gray-800">About</a>
+                    <a href="{{ route('login') }}" class="text-gray-600 hover:text-gray-800">Login</a>
+                    <a href="{{ route('register') }}" class="bg-[#013019] text-white px-3 py-1.5 rounded hover:bg-green-900 text-sm">Sign Up</a>
+        @endauth
             </div>
         </div>
     </div>

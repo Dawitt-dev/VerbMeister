@@ -9,5 +9,5 @@ class GermanVerb extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['verb', 'preposition', 'example_sentence'];
+    protected $fillable = ['verb', 'preposition', 'example_sentence', 'english_translation'];
 }
