@@ -4,10 +4,12 @@
 
 VerbMeister is a Laravel app for practicing German verbs and their prepositions through interactive quizzes, then tracking progress over time.
 
+markdownLive: [mastergermanverbs.com](https://mastergermanverbs.com)
+
 ## Features
 
 - Interactive quiz flow with immediate feedback
-- German verb + preposition practice
+- German verb and their prepositions practice
 - User progress and score tracking
 - Responsive frontend powered by Vite
 
